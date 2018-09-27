@@ -12,7 +12,7 @@ import java.util.Base64;
 public class TokenController {
 
     @PostMapping("/api/tokens")
-    @PreAuthorize("hasRole('USER'))")
+    @PreAuthorize("hasRole('USER')")
     public ResponseEntity createToken(Principal principal) {
         return ResponseEntity.ok().body(Base64.getEncoder().encode(principal.getName().getBytes()));
     }
